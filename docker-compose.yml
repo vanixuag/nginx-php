@@ -21,9 +21,10 @@ services:
       - ./public:/app
 
   jenkins:
-    image: jenkins/jenkins:latest
+    image: jenkins/jenkins:lts-jdk11
+    container_name: docker-compose-jenkins
     environment:
       - TZ="Europe/Minsk"
       - JENKINS_OPTS="--prefix=/jenkins"
     volumes:
-      - "./jenkins_data:/var/jenkins_home"    
+      - "./jenkins_data1:/var/jenkins_home"    
